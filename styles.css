@@ -31,8 +31,9 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   .product img {
-    width: 100%;
-    height: auto;
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* This will crop the image to fill the space if necessary */
     border-bottom: 1px solid #85C7DE;
     margin-bottom: 15px;
   }
@@ -48,8 +49,14 @@ body {
     color: #fff;
     font-size: 0.9em;
   }
-  .product img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover; /* This will crop the image to fill the space if necessary */
+  /* Optional: Adjust spacing in the quantity interface inside the modal */
+.quantity-interface {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .quantity-interface input[type="number"] {
+    text-align: center;
+    width: 80px;
   }
