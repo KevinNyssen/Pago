@@ -48,3 +48,8 @@ body {
     color: #fff;
     font-size: 0.9em;
   }
+  .product img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* This will crop the image to fill the space if necessary */
+  }
