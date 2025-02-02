@@ -16,26 +16,26 @@
   <title>Product Showcase</title>
 </head>
 <body>
-  <!-- Header with Cart Icon (aligned right) -->
+  <!-- Header with Cart Icon -->
   <header class="d-flex justify-content-between align-items-center p-3 bg-light">
-    <h1 class="m-0">Our Products</h1>
+    <h1 class="m-0">Nuestros productos</h1>
     <div id="cartIconContainer" style="cursor: pointer; position: relative;">
       <i class="bi bi-cart" style="font-size: 2rem;"></i>
       <span id="cartCount" class="badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
     </div>
+    
   </header>
   
   <!-- Product Cards -->
   <section class="product-container d-flex justify-content-center flex-wrap p-3">
-    <!-- Each product card uses data attributes for product info -->
     <!-- Product: Broom -->
     <div class="product m-2 p-3 border rounded" style="cursor: pointer;" 
          data-product="Broom" 
          data-image="broom.jpg" 
          data-price="19.99">
       <img src="images/broom.jpg" alt="Broom" class="img-fluid">
-      <h2 class="mt-2">Broom</h2>
-      <p class="price">Price: $19.99</p>
+      <h2 class="mt-2">Escoba</h2>
+      <p class="price">Precio: $19.99</p>
     </div>
     
     <!-- Product: Bucket -->
@@ -44,8 +44,8 @@
          data-image="bucket.png" 
          data-price="9.99">
       <img src="images/bucket.png" alt="Bucket" class="img-fluid">
-      <h2 class="mt-2">Bucket</h2>
-      <p class="price">Price: $9.99</p>
+      <h2 class="mt-2">Cubeta</h2>
+      <p class="price">Precio: $9.99</p>
     </div>
     
     <!-- Product: Vacuum -->
@@ -54,16 +54,16 @@
          data-image="vacuum.png" 
          data-price="49.99">
       <img src="images/vacuum.png" alt="Vacuum" class="img-fluid">
-      <h2 class="mt-2">Vacuum</h2>
-      <p class="price">Price: $49.99</p>
+      <h2 class="mt-2">Aspiradora</h2>
+      <p class="price">Precio: $49.99</p>
     </div>
   </section>
   
   <footer class="text-center py-3 bg-secondary text-white">
-    &copy; 2025 Your Company Name. All rights reserved.
+    &copy; 2025 Vida en tu Hogar. Derechos reservados.
   </footer>
   
-  <!-- Product Modal (opens when a product card is clicked) -->
+  <!-- Product Modal (opened when a product is clicked) -->
   <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -93,13 +93,41 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeCartModal"></button>
         </div>
         <div class="modal-body" id="cartModalBody">
-          <!-- Cart items will be injected here -->
           <p id="emptyCartMessage">No items in the cart.</p>
           <ul class="list-group" id="cartItemsList" style="display: none;"></ul>
         </div>
         <div class="modal-footer">
-          <!-- Optionally, add a checkout button here -->
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- Instead of a "Close" button, we now have a "Checkout" button -->
+          <button type="button" class="btn btn-primary" id="checkoutButton">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Checkout/Payment Modal -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeCheckoutModal"></button>
+        </div>
+        <div class="modal-body" id="checkoutModalBody">
+          <!-- Display total and payment method selection -->
+          <p id="checkoutTotal" class="fs-4"></p>
+          <div class="d-flex justify-content-around my-3">
+            <button class="btn btn-outline-primary" id="cardPaymentButton">
+              <img src="images/pago tarjeta.webp" alt="Card" style="width:100px; height:50px; margin-right:1px;">Credit or Debit
+            </button>
+            <button class="btn btn-outline-primary" id="paypalPaymentButton">
+              <img src="images/paypal.png" alt="PayPal" style="width:160px; height:60px; margin-right:5px;">
+            </button>
+          </div>
+          <!-- Container for dynamic payment form -->
+          <div id="paymentFormContainer"></div>
+        </div>
+        <div class="modal-footer">
+          <!-- Optionally, you can add a Cancel button here if needed -->
         </div>
       </div>
     </div>
@@ -113,4 +141,27 @@
   <!-- Custom Script -->
   <script src="scripts.js"></script>
 </body>
+<section id="policies" class="py-4 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Políticas</h2>
+    
+    <!-- Forma de Entrega -->
+    <div class="policy-section mb-4">
+      <h3>Forma de Entrega</h3>
+      <p>
+        Nosotros Vida en tu Hogar operamos en toda la república mexicana y tenemos un estándar de entrega entre 2 a 14 días hábiles entre pedidos. Después de los 14 días, usted, el consumidor, será acreedor a la petición de devolución, para la cual se verificará el estado de su pedido y se le depositará la devolución en un plazo de 2 a 7 días hábiles. Los pedidos son entregados por repartidores en una gama de vehículos, entre las que se encuentran motocicletas, camionetas, furgonetas, camiones, coches, etc. Cualquier retraso significativo en el tiempo esperado del pedido se le hará saber mediante email y notificación. Todos los pedidos se entregan en cajas que deben estar selladas en el domicilio o punto de entrega descrito por el cliente. Cualquier defecto en la entrega debe ser reportado lo más pronto posible y se espera un reporte en menos de 3 días naturales; de lo contrario, se le negará la devolución.
+      </p>
+    </div>
+    
+    <!-- Política de Garantía -->
+    <div class="policy-section">
+      <h3>Política de Garantía</h3>
+      <p>
+        Usted cuenta con 6 meses de garantía en cualquiera de sus adquisiciones de la categoría de electrodomésticos. En caso de cualquier desperfecto de transporte o funcionamiento en condiciones esperadas del producto, se le reemplazarán las piezas o se le dará un producto nuevo, dependiendo de la severidad del defecto. Productos de consumo, como maquillaje y perfume (de uso común), no cuentan con garantía de uso.
+      </p>
+    </div>
+  </div>
+</section>
+
+
 </html>

@@ -60,3 +60,33 @@ body {
     text-align: center;
     width: 80px;
   }
+  #paymentFormContainer {
+    margin-top: 15px;
+  }
+  #policies {
+    background-color: #f8f9fa; /* Light gray background (or adjust to your preference) */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  #policies .container {
+    max-width: 800px;
+  }
+  
+  .policy-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .policy-section h3 {
+    color: #333;
+    border-bottom: 2px solid #85C7DE; /* You can use one of your theme colors */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .policy-section p {
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
