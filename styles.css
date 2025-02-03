@@ -32,7 +32,7 @@ body {
   }
   .product img {
     width: 250px;
-    height: 250px;
+    height: 350px;
     object-fit: cover; /* This will crop the image to fill the space if necessary */
     border-bottom: 1px solid #85C7DE;
     margin-bottom: 15px;
