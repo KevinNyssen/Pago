@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const cartModal = new bootstrap.Modal(cartModalEl);
     const checkoutModalEl = document.getElementById("checkoutModal");
     const checkoutModal = new bootstrap.Modal(checkoutModalEl);
+    const disclaimerModalEl = document.getElementById("disclaimerModal");
+    const disclaimerModal = new bootstrap.Modal(disclaimerModalEl);
   
     // Elements within the product modal
     const modalTitle = document.getElementById("productModalLabel");
@@ -158,8 +160,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   
-    // --- CHECKOUT & PAYMENT MODAL LOGIC ---
-    // When the Checkout button in the Cart Modal is clicked
     document.getElementById("checkoutButton").addEventListener("click", function() {
       // Calculate the total amount
       let total = 0;
@@ -170,8 +170,15 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("checkoutTotal").textContent = "Total: $" + total.toFixed(2);
       // Clear any previous payment form content
       document.getElementById("paymentFormContainer").innerHTML = "";
-      // Hide the cart modal and show the checkout modal
+      // Hide the cart modal and show the disclaimer modal
       cartModal.hide();
+      disclaimerModal.show();
+    });
+  
+    // --- Disclaimer Modal Logic ---
+    // When the user accepts the disclaimer, hide it and then show the checkout modal with payment options.
+    document.getElementById("acceptDisclaimerButton").addEventListener("click", function() {
+      disclaimerModal.hide();
       checkoutModal.show();
     });
     
