@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         modalTitle.textContent = productName;
         modalImage.src = "images/" + productImage;
         modalImage.alt = productName;
-        modalDescription.textContent = `More details about the ${productName}. Price: $${productPrice}`;
+        modalDescription.textContent = `Detalles del producto ${productName}. Precio: $${productPrice}`;
         
         // Reset modal footer to initial "Add to Cart" button
         modalFooter.innerHTML = `<button class="btn btn-primary" id="modalAddToCart">Add to Cart</button>`;
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <label for="cardExpiry" class="form-label">Expiry Date</label>
             <input type="text" class="form-control" id="cardExpiry" placeholder="MM/YY" required>
           </div>
-          <button type="submit" class="btn btn-primary">Submit Payment</button>
+          <button type="submit" class="btn btn-primary">Confirmar pago</button>
         </form>
       `;
       
@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function() {
             paymentContainer.innerHTML = `
             <div class="text-center text-success">
                 <i class="bi bi-check-circle" style="font-size: 3rem;"></i>
-                <p class="fs-4">Payment made successfully.</p>
+                <p class="fs-4">El pago fue realizado con éxito.</p>
             </div>
             `;
         }, 1000);
@@ -239,14 +239,14 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("paymentFormContainer").innerHTML = `
         <form id="paypalPaymentForm">
           <div class="mb-3">
-            <label for="paypalEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="paypalEmail" placeholder="Enter your email" required>
+            <label for="paypalEmail" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="paypalEmail" placeholder="Escribir correo" required>
           </div>
           <div class="mb-3">
-            <label for="paypalPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="paypalPassword" placeholder="Enter your password" required>
+            <label for="paypalPassword" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="paypalPassword" placeholder="Escribir contraseña" required>
           </div>
-          <button type="submit" class="btn btn-primary">Submit Payment</button>
+          <button type="submit" class="btn btn-primary">Confirmar pago</button>
         </form>
       `;
       
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function() {
             paymentContainer.innerHTML = `
             <div class="text-center text-success">
                 <i class="bi bi-check-circle" style="font-size: 3rem;"></i>
-                <p class="fs-4">Payment made successfully.</p>
+                <p class="fs-4">¨Pago realizado con éxito.</p>
             </div>
             `;
         }, 1000);
